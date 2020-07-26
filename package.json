@@ -11,8 +11,7 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",
-    "gh-pages": "git subtree push --prefix dist origin gh-pages",
-    "github": "DEPLOY_ENV=GH_PAGES nuxt build && nuxt export && npm run gh-pages"
+    "github-pages": "DEPLOY_ENV=GH_PAGES nuxt build && nuxt export && git add dist && git subtree push --prefix dist origin gh-pages"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -41,7 +40,6 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
-    "push-dir": "^0.4.1",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0"
