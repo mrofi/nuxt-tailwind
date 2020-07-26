@@ -1,8 +1,7 @@
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/nuxt-tailwind/'
-  }
-} : {}
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? process.env.GITHUB_BASE_PATH || '/nuxt-tailwind/'
+    : '/'
 
 export default {
   /*
@@ -30,7 +29,9 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: routerBase + 'favicon.ico' },
+    ],
   },
   /*
    ** Global CSS
@@ -72,5 +73,8 @@ export default {
     host: '0.0.0.0', // default: localhost,
     timing: false,
   },
-  ...routerBase
+
+  router: {
+    base: routerBase,
+  },
 }
