@@ -164,7 +164,6 @@
 import SidebarMenu from '@/components/Base/SidebarMenu.vue'
 
 export default {
-  scrollToTop: true,
   components: { SidebarMenu },
   data() {
     return {
