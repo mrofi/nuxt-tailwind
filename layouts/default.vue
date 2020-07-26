@@ -37,7 +37,7 @@
         </div>
 
         <SidebarMenu
-          :current-path="currentPath()"
+          :current-route-path="currentPath()"
           @closeSidebar="closeSidebar()"
         />
       </div>

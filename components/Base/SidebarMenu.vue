@@ -5,7 +5,7 @@
       :key="item.path"
       class="flex items-center py-3 px-6 block border-l-4"
       :class="
-        item.path == currentPath
+        isActive(item.path)
           ? 'bg-black bg-opacity-25 text-gray-100 border-gray-100'
           : 'border-gray-900 text-gray-500 hover:bg-black hover:bg-opacity-25 hover:text-gray-100'
       "
@@ -14,7 +14,7 @@
     >
       <!-- eslint-disable vue/no-v-html -->
       <div
-        :class="item.path == currentPath ? 'text-indigo-500' : 'text-gray-700'"
+        :class="isActive(item.path) ? 'text-indigo-500' : 'text-gray-700'"
         v-html="item.icon"
       ></div>
       <span class="mx-4">{{ item.caption }}</span>
@@ -27,15 +27,22 @@ import menuItems from '../../resources/menu'
 export default {
   name: 'SidebarMenu',
   props: {
-    currentPath: {
+    currentRoutePath: {
       type: String,
-      default: '',
+      default: 'index',
     },
   },
   data() {
     return {
       items: menuItems,
     }
+  },
+  methods: {
+    isActive(path) {
+      return path === '/'
+        ? this.currentRoutePath === path
+        : this.currentRoutePath.indexOf(path) === 0
+    },
   },
 }
 </script>
