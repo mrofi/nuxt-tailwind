@@ -37,7 +37,7 @@
         </div>
 
         <SidebarMenu
-          :current-path="this.$route.path"
+          :current-path="currentPath()"
           @closeSidebar="closeSidebar()"
         />
       </div>
@@ -175,6 +175,9 @@ export default {
     closeSidebar() {
       this.isOpen = false
       document.getElementById('main').scrollTop = 0
+    },
+    currentPath() {
+      return this.$route.path
     },
   },
 }
