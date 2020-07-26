@@ -38,7 +38,7 @@
 
         <SidebarMenu
           :current-path="this.$route.path"
-          @closeSidebar="isOpen = false"
+          @closeSidebar="closeSidebar()"
         />
       </div>
 
@@ -150,7 +150,7 @@
           </div>
         </header>
 
-        <main class="flex-1 overflow-x-hidden overflow-y-auto">
+        <main id="main" class="flex-1 overflow-x-hidden overflow-y-auto">
           <div class="container mx-auto px-3 px-lg-1 py-3">
             <Nuxt />
           </div>
@@ -164,12 +164,19 @@
 import SidebarMenu from '@/components/Base/SidebarMenu.vue'
 
 export default {
+  scrollToTop: true,
   components: { SidebarMenu },
   data() {
     return {
       dropdownOpen: false,
       isOpen: false,
     }
+  },
+  methods: {
+    closeSidebar() {
+      this.isOpen = false
+      document.getElementById('main').scrollTop = 0
+    },
   },
 }
 </script>
