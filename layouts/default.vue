@@ -36,7 +36,10 @@
           </div>
         </div>
 
-        <SidebarMenu :current-path="this.$route.path" />
+        <SidebarMenu
+          :current-path="this.$route.path"
+          @closeSidebar="isOpen = false"
+        />
       </div>
 
       <div class="flex-1 flex flex-col overflow-hidden">
@@ -161,7 +164,7 @@
 import SidebarMenu from '@/components/Base/SidebarMenu.vue'
 
 export default {
-  components: [SidebarMenu],
+  components: { SidebarMenu },
   data() {
     return {
       dropdownOpen: false,
