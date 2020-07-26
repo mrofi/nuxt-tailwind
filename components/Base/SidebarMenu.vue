@@ -22,8 +22,7 @@
 </template>
 
 <script>
-import * as menu from '../resources/menu'
-
+import menuItems from '../../resources/menu'
 export default {
   props: {
     currentPath: {
@@ -33,7 +32,7 @@ export default {
   },
   data() {
     return {
-      items: menu,
+      items: menuItems,
     }
   },
 }

@@ -1,3 +1,9 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/nuxt-tailwind/'
+  }
+} : {}
+
 export default {
   /*
    ** Nuxt rendering mode
@@ -66,4 +72,5 @@ export default {
     host: '0.0.0.0', // default: localhost,
     timing: false,
   },
+  ...routerBase
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex h-screen bg-gray-200">
+    <div class="flex h-screen">
       <div
         class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden h-full"
         :class="isOpen ? 'block' : 'hidden'"
@@ -32,22 +32,18 @@
               />
             </svg>
 
-            <span class="text-white text-2xl mx-2 font-semibold"
-              >Dashboard</span
-            >
+            <span class="text-white text-2xl mx-2 font-semibold">My App</span>
           </div>
         </div>
 
-        <sidebar-menu :current-path="this.$route.path" />
+        <SidebarMenu :current-path="this.$route.path" />
       </div>
 
       <div class="flex-1 flex flex-col overflow-hidden">
-        <header
-          class="flex justify-between items-center py-4 px-6 bg-white border-b-4 border-indigo-600"
-        >
+        <header id="header" class="flex justify-between items-center py-4 px-3">
           <div class="flex items-center">
             <button
-              class="text-gray-500 focus:outline-none lg:hidden"
+              class="text-gray-600 focus:outline-none lg:hidden mr-3"
               @click="isOpen = !isOpen"
             >
               <svg
@@ -66,7 +62,7 @@
               </svg>
             </button>
 
-            <div class="relative mx-4 lg:mx-0">
+            <div class="relative">
               <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
                 <svg
                   class="h-5 w-5 text-gray-500"
@@ -84,7 +80,7 @@
               </span>
 
               <input
-                class="form-input w-32 sm:w-64 rounded-md pl-10 pr-4 focus:border-indigo-600"
+                class="form-input w-40 sm:w-64 rounded-md pl-10 pr-4 focus:border-indigo-600"
                 type="text"
                 placeholder="Search"
               />
@@ -151,8 +147,8 @@
           </div>
         </header>
 
-        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
-          <div class="container mx-auto px-6 py-8">
+        <main class="flex-1 overflow-x-hidden overflow-y-auto">
+          <div class="container mx-auto px-3 px-lg-1 py-3">
             <Nuxt />
           </div>
         </main>
@@ -162,7 +158,10 @@
 </template>
 
 <script>
+import SidebarMenu from '@/components/Base/SidebarMenu.vue'
+
 export default {
+  components: [SidebarMenu],
   data() {
     return {
       dropdownOpen: false,
@@ -171,3 +170,12 @@ export default {
   },
 }
 </script>
+
+<style>
+body {
+  background: #f3f3f3;
+}
+#header {
+  background: #fafafa;
+}
+</style>
