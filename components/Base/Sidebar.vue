@@ -31,7 +31,7 @@
 
     <SidebarMenu
       :current-route-path="currentPath()"
-      @closeSidebar.native="$emit('closeSidebar')"
+      @closeSidebar="$emit('closeSidebar')"
     />
   </div>
 </template>
