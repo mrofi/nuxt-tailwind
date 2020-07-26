@@ -17,4 +17,7 @@ $ npm run start
 $ npm run generate
 ```
 
+# publish to github-pages by gh-pages branch
+$ npm run github-pages
+
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
