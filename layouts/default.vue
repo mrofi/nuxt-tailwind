@@ -6,7 +6,7 @@
         :class="isOpen ? 'block' : 'hidden'"
         @click="isOpen = !isOpen"
       ></div>
-      <Sidebar :is-open="isOpen" @closeSidebar="closeSidebar()" />
+      <Sidebar :is-open="isOpen" @click="closeSidebar()" />
       <div class="flex-1 flex flex-col overflow-hidden">
         <header id="header" class="flex justify-between items-center py-4 px-3">
           <div class="flex items-center">

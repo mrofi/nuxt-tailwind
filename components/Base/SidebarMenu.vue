@@ -10,7 +10,7 @@
           : 'border-gray-900 text-gray-500 hover:bg-black hover:bg-opacity-25 hover:text-gray-100'
       "
       :to="item.path"
-      @click.native="$emit('closeSidebar')"
+      @click.native="$emit('click')"
     >
       <!-- eslint-disable vue/no-v-html -->
       <div
@@ -24,14 +24,9 @@
 
 <script>
 import menuItems from '../../resources/menu'
+
 export default {
   name: 'SidebarMenu',
-  props: {
-    currentRoutePath: {
-      type: String,
-      default: 'index',
-    },
-  },
   data() {
     return {
       items: menuItems,
@@ -40,8 +35,8 @@ export default {
   methods: {
     isActive(path) {
       return path === '/'
-        ? this.currentRoutePath === path
-        : this.currentRoutePath.indexOf(path) === 0
+        ? this.$route.path === path
+        : this.$route.path.indexOf(path) === 0
     },
   },
 }

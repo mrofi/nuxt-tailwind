@@ -29,10 +29,7 @@
       </div>
     </div>
 
-    <SidebarMenu
-      :current-route-path="currentPath()"
-      @closeSidebar="$emit('closeSidebar')"
-    />
+    <SidebarMenu @click="$emit('click')" />
   </div>
 </template>
 
@@ -45,11 +42,6 @@ export default {
     isOpen: {
       type: Boolean,
       default: false,
-    },
-  },
-  methods: {
-    currentPath() {
-      return this.$route.path
     },
   },
 }
