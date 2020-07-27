@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import menuItems from '../../resources/menu'
+import menuItems from '@/resources/menu'
 
 export default {
   name: 'SidebarMenu',
