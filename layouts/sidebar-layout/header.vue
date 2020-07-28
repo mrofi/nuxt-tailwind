@@ -3,7 +3,7 @@
     <div class="flex items-center">
       <button
         class="text-gray-600 focus:outline-none lg:hidden mr-3"
-        @click="isOpen = !isOpen"
+        @click="$emit('toggleClick')"
       >
         <SvgMenu class="h-6 w-6" />
       </button>
@@ -26,10 +26,6 @@ import search from './search.vue'
 export default {
   components: { notification, profile, search },
   props: {
-    isOpen: {
-      type: Boolean,
-      default: false,
-    },
     profileMenus: {
       type: Object,
       default: () => {},

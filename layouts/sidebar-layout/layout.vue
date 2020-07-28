@@ -20,9 +20,9 @@
       <div class="flex-1 flex flex-col overflow-hidden">
         <!-- Header -->
         <Header
-          :is-open="isOpen"
           :profile-menus="profileMenus"
           :profile-image-url="profileImageUrl"
+          @toggleClick="isOpen = !isOpen"
         />
         <!-- End of Header -->
 
