@@ -23,14 +23,12 @@
 </template>
 
 <script>
-import menuItems from '@/resources/menu'
-
 export default {
-  name: 'SidebarMenu',
-  data() {
-    return {
-      items: menuItems,
-    }
+  props: {
+    items: {
+      type: Object,
+      default: () => {},
+    },
   },
   methods: {
     isActive(path) {

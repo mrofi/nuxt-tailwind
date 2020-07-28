@@ -10,19 +10,23 @@
       </div>
     </div>
 
-    <SidebarMenu @click="$emit('click')" />
+    <Menu :items="menuItems" @click="$emit('click')" />
   </div>
 </template>
 
 <script>
-import SidebarMenu from './SidebarMenu.vue'
+import Menu from './menu.vue'
 
 export default {
-  components: { SidebarMenu },
+  components: { Menu },
   props: {
     isOpen: {
       type: Boolean,
       default: false,
+    },
+    menuItems: {
+      type: Object,
+      default: () => {},
     },
   },
 }

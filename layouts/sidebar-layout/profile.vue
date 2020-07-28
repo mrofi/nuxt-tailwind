@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import DropdownTopMenu from './DropdownTopMenu.vue'
+import DropdownTopMenu from './dropdown-topmenu.vue'
 export default {
   components: { DropdownTopMenu },
   props: {

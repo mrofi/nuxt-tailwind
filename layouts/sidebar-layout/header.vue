@@ -1,0 +1,43 @@
+<template>
+  <header id="header" class="flex justify-between items-center py-4 px-3">
+    <div class="flex items-center">
+      <button
+        class="text-gray-600 focus:outline-none lg:hidden mr-3"
+        @click="isOpen = !isOpen"
+      >
+        <SvgMenu class="h-6 w-6" />
+      </button>
+
+      <search />
+    </div>
+
+    <div class="flex items-center">
+      <notification />
+
+      <profile :links="profileMenus" :image-url="profileImageUrl" />
+    </div>
+  </header>
+</template>
+
+<script>
+import notification from './notification.vue'
+import profile from './profile.vue'
+import search from './search.vue'
+export default {
+  components: { notification, profile, search },
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: false,
+    },
+    profileMenus: {
+      type: Object,
+      default: () => {},
+    },
+    profileImageUrl: {
+      type: String,
+      default: null,
+    },
+  },
+}
+</script>
