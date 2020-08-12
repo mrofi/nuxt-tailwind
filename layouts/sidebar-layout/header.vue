@@ -7,11 +7,10 @@
       >
         <SvgMenu class="h-6 w-6" />
       </button>
-
-      <search />
     </div>
 
     <div class="flex items-center">
+      <search />
       <notification />
 
       <profile :links="profileMenus" :image-url="profileImageUrl" />
