@@ -14,7 +14,7 @@
     >
       <!-- eslint-disable vue/no-v-html -->
       <div
-        :class="isActive(item.path) ? 'text-indigo-500' : 'text-gray-700'"
+        :class="isActive(item.path) ? 'text-indigo-600' : 'text-gray-700'"
         v-html="item.icon"
       ></div>
       <span class="mx-4">{{ item.caption }}</span>
@@ -26,8 +26,8 @@
 export default {
   props: {
     items: {
-      type: Object,
-      default: () => {},
+      type: Array,
+      default: () => [],
     },
   },
   methods: {

@@ -20,6 +20,7 @@ export default {
       profileMenus: [
         {
           path: '/profile',
+          icon: 'feather/user',
           caption: 'Profile',
         },
         {

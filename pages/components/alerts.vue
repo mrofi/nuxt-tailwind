@@ -6,7 +6,9 @@
       <div class="mt-4">
         <h4 class="my-2">
           <a href="#alert-default"
-            ><SvgLink class="w-5 h-5 inline-block text-indigo-800"
+            ><svg-icon
+              icon="feather/link"
+              class="w-5 h-5 inline-block text-indigo-800"
           /></a>
           Alert Default
         </h4>

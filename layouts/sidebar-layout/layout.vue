@@ -46,12 +46,12 @@ export default {
   components: { Header, Sidebar },
   props: {
     mainMenus: {
-      type: Object,
-      default: () => {},
+      type: Array,
+      default: () => [],
     },
     profileMenus: {
-      type: Object,
-      default: () => {},
+      type: Array,
+      default: () => [],
     },
     profileImageUrl: {
       type: String,

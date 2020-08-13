@@ -13,10 +13,7 @@
       @click="dropdownOpen = false"
     ></div>
 
-    <div
-      v-show="dropdownOpen"
-      class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20"
-    >
+    <div v-show="dropdownOpen" class="absolute right-0 mt-2 z-20">
       <slot></slot>
     </div>
   </div>

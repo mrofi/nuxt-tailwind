@@ -5,7 +5,7 @@
         class="text-gray-600 focus:outline-none lg:hidden mr-3"
         @click="$emit('toggleClick')"
       >
-        <SvgMenu class="h-6 w-6" />
+        <svg-icon icon="feather/menu" class="h-6 w-6" />
       </button>
     </div>
 
@@ -26,8 +26,8 @@ export default {
   components: { notification, profile, search },
   props: {
     profileMenus: {
-      type: Object,
-      default: () => {},
+      type: Array,
+      default: () => [],
     },
     profileImageUrl: {
       type: String,
