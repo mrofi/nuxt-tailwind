@@ -24,3 +24,4 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 Credits :
 - Dashboard Template by [Khatab Wedaa](https://github.com/khatabwedaa) [Github](https://github.com/tailwindcomponents/dashboard)
+- Feather Icons [Website](https://feathericons.com/)
