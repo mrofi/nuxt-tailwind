@@ -8,21 +8,35 @@
       />
     </template>
     <div class="w-48 bg-indigo-700 text-white text-sm rounded-md shadow-xl">
-      <div class="border-b px-4 py-4 border-indigo-600">
-        John Wick
-        <div class="text-xs">Web Developer</div>
+      <div class="p-4">
+        {{ userName }}
+        <div class="text-xs">{{ userRole }}</div>
       </div>
-      <div class="p-2">
+      <div v-if="links.length" class="p-2 border-t border-indigo-600">
         <nuxt-link
           v-for="item in links"
           :key="item.path"
           :to="item.path"
-          :class="linkClass"
+          class="flex items-center block px-2 py-2 rounded-md hover:bg-indigo-600"
         >
           <div v-if="item.icon !== undefined" class="inline-block">
             <svg-icon :icon="item.icon" class="h-5 w-5 mr-2" />
           </div>
           {{ item.caption }}
+        </nuxt-link>
+      </div>
+      <div
+        v-if="logoutPath != undefined"
+        class="p-2 border-t border-indigo-600"
+      >
+        <nuxt-link
+          :to="logoutPath"
+          class="flex items-center block px-2 py-2 rounded-md hover:bg-indigo-600"
+        >
+          <div class="inline-block">
+            <svg-icon icon="feather/toggle-right" class="h-5 w-5 mr-2" />
+          </div>
+          Logout
         </nuxt-link>
       </div>
     </div>
@@ -34,6 +48,18 @@ import DropdownTopMenu from './dropdown-topmenu.vue'
 export default {
   components: { DropdownTopMenu },
   props: {
+    userName: {
+      type: String,
+      default: null,
+    },
+    userRole: {
+      type: String,
+      default: null,
+    },
+    logoutPath: {
+      type: String,
+      default: null,
+    },
     imageUrl: {
       type: String,
       default:
@@ -42,11 +68,6 @@ export default {
     links: {
       type: Array,
       default: () => [],
-    },
-    linkClass: {
-      type: String,
-      default:
-        'flex items-center block px-2 py-2 rounded-md hover:bg-indigo-600',
     },
   },
 }

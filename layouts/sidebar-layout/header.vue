@@ -13,7 +13,13 @@
       <search />
       <notification />
 
-      <profile :links="profileMenus" :image-url="profileImageUrl" />
+      <profile
+        :user-name="profileData.userName"
+        :user-role="profileData.userRole"
+        :image-url="profileData.userImageUrl"
+        :links="profileData.menus"
+        :logout-path="profileData.logoutPath"
+      />
     </div>
   </header>
 </template>
@@ -25,13 +31,17 @@ import search from './search.vue'
 export default {
   components: { notification, profile, search },
   props: {
-    profileMenus: {
-      type: Array,
-      default: () => [],
-    },
-    profileImageUrl: {
-      type: String,
-      default: null,
+    profileData: {
+      type: Object,
+      default: () => {
+        return {
+          userName: null,
+          userRole: null,
+          userImageUrl: null,
+          menus: [],
+          logoutPath: null,
+        }
+      },
     },
   },
 }

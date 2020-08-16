@@ -19,11 +19,7 @@
 
       <div class="flex-1 flex flex-col overflow-hidden">
         <!-- Header -->
-        <Header
-          :profile-menus="profileMenus"
-          :profile-image-url="profileImageUrl"
-          @toggleClick="isOpen = !isOpen"
-        />
+        <Header :profile-data="profileData" @toggleClick="isOpen = !isOpen" />
         <!-- End of Header -->
 
         <!-- Main -->
@@ -49,13 +45,11 @@ export default {
       type: Array,
       default: () => [],
     },
-    profileMenus: {
-      type: Array,
-      default: () => [],
-    },
-    profileImageUrl: {
-      type: String,
-      default: null,
+    profileData: {
+      type: Object,
+      default: () => {
+        return Header.props.profileData.default
+      },
     },
   },
   data() {
