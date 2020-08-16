@@ -12,11 +12,16 @@
       :to="item.path"
       @click.native="$emit('click')"
     >
-      <!-- eslint-disable vue/no-v-html -->
       <div
-        :class="isActive(item.path) ? 'text-indigo-600' : 'text-gray-700'"
-        v-html="item.icon"
-      ></div>
+        :class="isActive(item.path) ? 'text-indigo-700' : 'text-gray-700'"
+        class="inline-block"
+      >
+        <svg-icon
+          v-if="item.icon !== undefined"
+          :icon="item.icon"
+          class="h-6 w-6 mr-2"
+        />
+      </div>
       <span class="mx-4">{{ item.caption }}</span>
     </nuxt-link>
   </nav>
