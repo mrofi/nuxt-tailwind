@@ -18,6 +18,7 @@
 import Menu from './menu.vue'
 
 export default {
+  name: 'Sidebar',
   components: { Menu },
   props: {
     isOpen: {

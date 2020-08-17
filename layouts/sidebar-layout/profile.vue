@@ -46,6 +46,7 @@
 <script>
 import DropdownTopMenu from './dropdown-topmenu.vue'
 export default {
+  name: 'Profile',
   components: { DropdownTopMenu },
   props: {
     userName: {

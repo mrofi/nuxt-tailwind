@@ -25,11 +25,12 @@
 </template>
 
 <script>
-import notification from './notification.vue'
-import profile from './profile.vue'
-import search from './search.vue'
+import Notification from './notification.vue'
+import Profile from './profile.vue'
+import Search from './search.vue'
 export default {
-  components: { notification, profile, search },
+  name: 'Header',
+  components: { Notification, Profile, Search },
   props: {
     profileData: {
       type: Object,

@@ -19,4 +19,18 @@ module.exports = [
     caption: 'Forms',
     icon: 'feather/edit',
   },
+  {
+    caption: 'Menu',
+    icon: 'feather/activity',
+    children: [
+      {
+        path: '/submenu',
+        caption: 'Sub Menu',
+      },
+      {
+        path: '/submenu2',
+        caption: 'Sub Menu 2',
+      },
+    ],
+  },
 ]

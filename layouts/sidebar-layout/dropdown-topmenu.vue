@@ -21,6 +21,7 @@
 
 <script>
 export default {
+  name: 'DropdownTopmenu',
   data() {
     return {
       dropdownOpen: false,
