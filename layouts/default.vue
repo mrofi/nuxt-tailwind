@@ -42,6 +42,24 @@ export default {
       },
     }
   },
+  methods: {
+    makeTitle: (text) => {
+      const words = text.split('-')
+
+      for (let i = 0; i < words.length; i++) {
+        const word = words[i]
+        words[i] = word.charAt(0).toUpperCase() + word.slice(1)
+      }
+
+      return words.join(' ')
+    },
+  },
+  head() {
+    const title = this.$route.name || 'Error 404 - Page Not Found'
+    return {
+      title: this.makeTitle(title) + ' | ' + process.env.appName,
+    }
+  },
 }
 </script>
 
