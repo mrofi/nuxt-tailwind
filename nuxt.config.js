@@ -3,7 +3,13 @@ const routerBase =
     ? process.env.GITHUB_BASE_PATH || '/nuxt-tailwind/'
     : '/'
 
+const appName = process.env.npm_package_name || ''
+
 export default {
+  /**
+   * Environment Variable
+   */
+  env: { appName },
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
@@ -19,7 +25,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: appName,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
