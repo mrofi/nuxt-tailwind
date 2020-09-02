@@ -5,7 +5,22 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
-  theme: {},
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
+  theme: {
+    customForms: (theme) => ({
+      default: {
+        input: {
+          borderRadius: theme('borderRadius.md'),
+          '&:focus': {
+            boxShadow: theme('boxShadow.xs'),
+            borderColor: theme('borderColor.indigo.400'),
+          },
+        },
+      },
+    }),
+  },
   variants: {},
   plugins: [require('@tailwindcss/custom-forms')],
   purge: {
