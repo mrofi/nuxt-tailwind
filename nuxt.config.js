@@ -37,6 +37,17 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: routerBase + 'favicon.ico' },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://unpkg.com/prismjs@1.21.0/themes/prism-okaidia.css',
+      },
+    ],
+    script: [
+      {
+        src: 'https://unpkg.com/prismjs@1.21.0/prism.js',
+        body: true,
+      },
     ],
   },
   /*
@@ -47,7 +58,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ['@/plugins/t-components.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -75,7 +86,7 @@ export default {
   build: {},
 
   server: {
-    port: 8080, // default: 3000
+    port: 3000, // default: 3000
     host: '0.0.0.0', // default: localhost,
     timing: false,
   },
