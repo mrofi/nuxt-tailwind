@@ -5,7 +5,7 @@
     </span>
 
     <input
-      class="form-input w-40 sm:w-64 rounded-md pl-10 pr-4 focus:border-indigo-600"
+      class="form-input w-40 sm:w-64 pl-10 pr-4"
       type="text"
       placeholder="Search"
     />

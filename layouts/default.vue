@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import Layout from './sidebar-layout/layout.vue'
 import MainMenu from '@/resources/menu'
+import Layout from './sidebar-layout/layout.vue'
 
 export default {
   components: { Layout },
