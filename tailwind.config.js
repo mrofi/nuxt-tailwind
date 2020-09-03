@@ -31,6 +31,7 @@ module.exports = {
       'layouts/**/*.vue',
       'pages/**/*.vue',
       'plugins/**/*.js',
+      'resources/**/*.js',
       'nuxt.config.js',
     ],
   },

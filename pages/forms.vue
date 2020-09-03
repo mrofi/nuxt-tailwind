@@ -137,3 +137,11 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  head: {
+    titleTemplate: 'My Forms | %s',
+  },
+}
+</script>

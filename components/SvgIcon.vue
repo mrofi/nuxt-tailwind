@@ -38,7 +38,7 @@ export default {
   methods: {
     location: (icon) => {
       try {
-        return require(`!html-loader!../assets/svg-icon/${icon}.svg`)
+        return require(`!html-loader!../resources/svg-icon/${icon}.svg`)
       } catch (error) {
         return null
       }

@@ -57,7 +57,7 @@ export default {
   head() {
     const title = this.$route.name || 'Error 404 - Page Not Found'
     return {
-      title: this.makeTitle(title) + ' | ' + process.env.appName,
+      titleTemplate: this.makeTitle(title) + ' | %s',
     }
   },
 }

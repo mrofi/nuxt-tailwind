@@ -27,10 +27,6 @@ module.exports = [
         path: '/submenu',
         caption: 'Sub Menu',
       },
-      {
-        path: '/submenu2',
-        caption: 'Sub Menu 2',
-      },
     ],
   },
 ]

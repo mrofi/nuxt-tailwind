@@ -3,7 +3,7 @@ const routerBase =
     ? process.env.GITHUB_BASE_PATH || '/nuxt-tailwind/'
     : '/'
 
-const appName = process.env.npm_package_name || ''
+const appName = 'Nuxt Tailwind'
 
 export default {
   /**
@@ -83,7 +83,9 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    analyze: true,
+  },
 
   server: {
     port: 3000, // default: 3000
