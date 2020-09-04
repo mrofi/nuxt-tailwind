@@ -1,7 +1,7 @@
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? process.env.GITHUB_BASE_PATH || '/nuxt-tailwind/'
-    : '/'
+    : ''
 
 const appName = 'Nuxt Tailwind'
 
@@ -9,7 +9,7 @@ export default {
   /**
    * Environment Variable
    */
-  env: { appName },
+  env: { appName, routerBase },
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode

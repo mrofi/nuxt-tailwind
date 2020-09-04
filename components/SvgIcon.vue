@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable vue/no-v-html -->
-  <div v-html="location(icon)"></div>
+  <div v-html="svg"></div>
 </template>
 <script>
 export default {
@@ -18,10 +18,18 @@ export default {
       default: null,
     },
   },
-  mounted() {
-    try {
-      if (this.$el.firstElementChild.nodeName === 'svg') {
-        const svgElement = this.$el.firstElementChild
+  async fetch() {
+    const path = `${window.location.origin}/${process.env.routerBase}`.replace(
+      /\/$/,
+      ''
+    )
+    const url = `${path}/svg-icon/${this.icon}.svg`
+    await fetch(url)
+      .then((r) => r.text())
+      .then((t) => {
+        const el = document.createElement('div')
+        el.innerHTML = t
+        const svgElement = el.firstElementChild
         svgElement.removeAttribute('height')
         svgElement.removeAttribute('width')
         if (this.fill) {
@@ -30,19 +38,13 @@ export default {
         if (this.stroke) {
           svgElement.setAttribute('stroke', this.stroke)
         }
-      }
-    } catch (error) {
-      //
-    }
+        this.svg = svgElement.outerHTML
+      })
   },
-  methods: {
-    location: (icon) => {
-      try {
-        return require(`!html-loader!../resources/svg-icon/${icon}.svg`)
-      } catch (error) {
-        return null
-      }
-    },
+  data() {
+    return {
+      svg: '',
+    }
   },
 }
 </script>
