@@ -24,7 +24,10 @@
     }
   },
   "dependencies": {
+    "@nuxt/content": "^1.8.1",
+    "@tailwindcss/typography": "^0.2.0",
     "nuxt": "^2.14.4",
+    "prism-themes": "^1.4.0",
     "vue-tailwind": "^1.2.1"
   },
   "devDependencies": {

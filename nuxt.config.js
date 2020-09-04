@@ -37,17 +37,6 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: routerBase + 'favicon.ico' },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: 'https://unpkg.com/prismjs@1.21.0/themes/prism-okaidia.css',
-      },
-    ],
-    script: [
-      {
-        src: 'https://unpkg.com/prismjs@1.21.0/prism.js',
-        body: true,
-      },
     ],
   },
   /*
@@ -78,7 +67,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxt/content'],
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
@@ -93,5 +82,13 @@ export default {
 
   router: {
     base: routerBase,
+  },
+
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-xonokai.css',
+      },
+    },
   },
 }
