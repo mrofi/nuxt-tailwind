@@ -94,7 +94,7 @@ export default {
 
   generate: {
     routes() {
-      const routes = []
+      const routes = ['/docs/']
 
       // docs
       const docsFolder = './static/content/docs/'

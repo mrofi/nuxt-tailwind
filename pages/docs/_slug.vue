@@ -31,11 +31,9 @@ export default {
       breaks: true,
       typographer: true,
     })
-    const path = `${window.location.origin}/${process.env.routerBase}`.replace(
-      /\/$/,
-      ''
-    )
-    const url = `${path}/content/docs/${params.slug || 'intro'}.md`
+    const host = window.location.origin
+    const path = process.env.routerBase.replace('/', '')
+    const url = `${host}/${path}/content/docs/${params.slug || 'intro'}.md`
     const article = await fetch(url)
       .then((r) => r.text())
       .then((t) => {
