@@ -1,6 +1,6 @@
 # Eloquent: Getting Started Oke
 
-- [Introduction](@#introduction)
+- [Introduction](#introduction)
 - [Defining Models](#defining-models)
     - [Eloquent Model Conventions](#eloquent-model-conventions)
     - [Default Attribute Values](#default-attribute-values)
@@ -31,6 +31,7 @@
 <a name="introduction"></a>
 ## Introduction
 
+<h2> Test </h2>
 The Eloquent ORM included with Laravel provides a beautiful, simple ActiveRecord implementation for working with your database. Each database table has a corresponding "Model" which is used to interact with that table. Models allow you to query for data in your tables, as well as insert new records into the table.
 
 Before getting started, be sure to configure a database connection in `config/database.php`. For more information on configuring your database, check out [the documentation](/docs/{{version}}/database#configuration).
@@ -69,7 +70,7 @@ Now, let's look at an example `Flight` model, which we will use to retrieve and 
 #### Table Names
 
 Note that we did not tell Eloquent which table to use for our `Flight` model. By convention, the "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. So, in this case, Eloquent will assume the `Flight` model stores records in the `flights` table. You may specify a custom table by defining a `table` property on your model:
-```php
+```php[inser.php]
 <?php
 
 namespace App;

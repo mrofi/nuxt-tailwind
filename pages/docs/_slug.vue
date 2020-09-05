@@ -1,16 +1,46 @@
 <template>
   <article id="article" class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
-    <h1>
-      {{ article.title }}
-    </h1>
-    <nuxt-content :document="article" />
+    <!-- eslint-disable-next-line -->
+    <div v-html="article"></div>
   </article>
 </template>
 
 <script>
+import { Remarkable } from 'remarkable'
+import hljs from 'highlight.js'
+
 export default {
-  async asyncData({ $content, params }) {
-    const article = await $content('docs', params.slug || 'intro').fetch()
+  async asyncData({ params }) {
+    const md = new Remarkable('commonmark', {
+      highlight: (str, lang) => {
+        if (lang && hljs.getLanguage(lang)) {
+          try {
+            return hljs.highlight(lang, str).value
+          } catch (err) {}
+        }
+
+        try {
+          return hljs.highlightAuto(str).value
+        } catch (err) {}
+
+        return '' // use external default escaping
+      },
+    })
+    md.set({
+      html: true,
+      breaks: true,
+      typographer: true,
+    })
+    const path = `${window.location.origin}/${process.env.routerBase}`.replace(
+      /\/$/,
+      ''
+    )
+    const url = `${path}/content/docs/${params.slug || 'intro'}.md`
+    const article = await fetch(url)
+      .then((r) => r.text())
+      .then((t) => {
+        return md.render(t)
+      })
 
     return { article }
   },

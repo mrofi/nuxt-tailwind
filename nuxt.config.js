@@ -1,3 +1,5 @@
+import fs from 'fs'
+
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? process.env.GITHUB_BASE_PATH || '/nuxt-tailwind/'
@@ -37,6 +39,12 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: routerBase + 'favicon.ico' },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/solarized-dark.min.css',
+      },
     ],
   },
   /*
@@ -67,7 +75,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxt/content'],
+  modules: [],
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
@@ -84,11 +92,17 @@ export default {
     base: routerBase,
   },
 
-  content: {
-    markdown: {
-      prism: {
-        theme: 'prism-themes/themes/prism-xonokai.css',
-      },
+  generate: {
+    routes() {
+      const routes = []
+
+      // docs
+      const docsFolder = './static/content/docs/'
+      fs.readdirSync(docsFolder).forEach((file) => {
+        routes.push('/docs/' + file.replace('.md', ''))
+      })
+
+      return routes
     },
   },
 }
