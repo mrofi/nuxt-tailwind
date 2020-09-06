@@ -1,6 +1,7 @@
 ---
 title: Introduction
-description: Welcome to Nuxt Tailwind.
+description: Siap Gan
 ---
 
-# Welcome to Nuxt Tailwind
+# Introduction
+Cool

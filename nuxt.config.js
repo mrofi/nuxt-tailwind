@@ -43,7 +43,13 @@ export default {
         rel: 'stylesheet',
         type: 'text/css',
         href:
-          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/solarized-dark.min.css',
+          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/atom-one-dark.min.css',
+      },
+    ],
+    script: [
+      {
+        src:
+          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js',
       },
     ],
   },
@@ -52,7 +58,7 @@ export default {
    */
   css: [],
   /*
-   ** Plugins to load before mounting the App
+   ** Plugins to load before mounting the App`
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: ['@/plugins/t-components.js'],
@@ -81,12 +87,6 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
-
-  server: {
-    port: 3000, // default: 3000
-    host: '0.0.0.0', // default: localhost,
-    timing: false,
-  },
 
   router: {
     base: routerBase,

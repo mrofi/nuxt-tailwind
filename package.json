@@ -26,9 +26,9 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.2.0",
-    "highlight.js": "^10.1.2",
     "nuxt": "^2.14.4",
     "remarkable": "^2.0.1",
+    "remarkable-meta": "^1.0.1",
     "vue-tailwind": "^1.2.1"
   },
   "devDependencies": {
