@@ -61,7 +61,7 @@ export default {
    ** Plugins to load before mounting the App`
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['@/plugins/t-components.js'],
+  plugins: ['@/plugins/t-components.js', '@/plugins/mark-highlight.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -94,9 +94,9 @@ export default {
 
   generate: {
     routes() {
+      // docs page generator
       const routes = ['/docs/']
 
-      // docs
       const docsFolder = './static/content/docs/'
       fs.readdirSync(docsFolder).forEach((file) => {
         routes.push('/docs/' + file.replace('.md', ''))

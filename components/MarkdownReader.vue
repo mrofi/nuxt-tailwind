@@ -1,10 +1,6 @@
 <template>
-  <article
-    class="markdown-reader prose prose-sm sm:prose lg:prose-lg xl:prose-xl"
-  >
-    <!-- eslint-disable-next-line -->
-    <div v-html="markdown"></div>
-  </article>
+  <!-- eslint-disable-next-line -->
+  <div v-html="markdown"></div>
 </template>
 
 <script>

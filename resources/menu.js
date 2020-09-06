@@ -29,4 +29,14 @@ module.exports = [
       },
     ],
   },
+  {
+    caption: 'Documentation',
+    icon: 'feather/book',
+    children: [
+      {
+        path: '/docs',
+        caption: 'Introduction',
+      },
+    ],
+  },
 ]
