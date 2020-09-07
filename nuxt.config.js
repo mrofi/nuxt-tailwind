@@ -81,7 +81,7 @@ export default {
 
   generate: {
     routes() {
-      // docs page generator, you can remove this part
+      // doc pages generator, you can remove this part if doesn't need doc pages
       const routes = ['/docs/']
 
       const docsFolder = './static/content/docs/'
@@ -94,7 +94,7 @@ export default {
   },
 
   publicRuntimeConfig: {
-    appName,
-    routerBase,
+    appName: process.env.APP_NAME || appName,
+    routerBase: process.env.ROUTER_BASE || routerBase,
   },
 }
