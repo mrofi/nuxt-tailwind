@@ -9,7 +9,6 @@
     "export": "nuxt export",
     "serve": "nuxt serve",
     "generate": "nuxt generate",
-    "github-generate": "DEPLOY_ENV=GH_PAGES nuxt build && DEPLOY_ENV=GH_PAGES nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",

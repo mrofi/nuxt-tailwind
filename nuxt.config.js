@@ -1,17 +1,17 @@
 import fs from 'fs'
 
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? process.env.GITHUB_BASE_PATH || '/nuxt-tailwind/'
-    : ''
+// Create name for your app
+const appName = process.env.APP_NAME || 'Nuxt Tailwind'
 
-const appName = 'Nuxt Tailwind'
+// Create description for your app
+const appDescription =
+  process.env.APP_DESCRIPTION ||
+  'A Simple Dashboard Admin powered by Nuxt.JS and Tailwind CSS'
+
+// Your default router base, usually use '',
+const routerBase = process.env.ROUTER_BASE || ''
 
 export default {
-  /**
-   * Environment Variable
-   */
-  env: { appName, routerBase },
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
@@ -34,23 +34,11 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content: appDescription,
       },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: routerBase + 'favicon.ico' },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href:
-          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/atom-one-dark.min.css',
-      },
-    ],
-    script: [
-      {
-        src:
-          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js',
-      },
     ],
   },
   /*
@@ -94,7 +82,7 @@ export default {
 
   generate: {
     routes() {
-      // docs page generator
+      // docs page generator, you can remove this part
       const routes = ['/docs/']
 
       const docsFolder = './static/content/docs/'
@@ -104,5 +92,10 @@ export default {
 
       return routes
     },
+  },
+
+  publicRuntimeConfig: {
+    appName,
+    routerBase,
   },
 }

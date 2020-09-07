@@ -25,7 +25,7 @@ export default {
       md.use(MetaPlugin)
       const appBaseUrl = window.location.href.split('?')[0].split('#')[0]
       const host = window.location.origin
-      const path = process.env.routerBase.replace(/^\/|\/$/g, '')
+      const path = this.$config.routerBase.replace(/^\/|\/$/g, '')
       const source = this.source.replace(/^\/|\/$/g, '')
       const baseUrl = `${host}/${path}`.replace(/^\/|\/$/g, '')
       const url = `${baseUrl}/${source}`

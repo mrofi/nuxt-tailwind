@@ -19,7 +19,7 @@ export default {
     },
   },
   async fetch() {
-    const path = `${window.location.origin}/${process.env.routerBase}`.replace(
+    const path = `${window.location.origin}/${this.$config.routerBase}`.replace(
       /\/$/,
       ''
     )

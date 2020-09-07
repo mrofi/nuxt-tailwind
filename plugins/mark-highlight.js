@@ -9,6 +9,26 @@ const MarkHighlight = {
           MarkHighlight.markHighlight()
         }
       },
+      beforeMount() {
+        if (document.getElementById('mark-highlight-script') === null) {
+          const style = document.createElement('link')
+          style.setAttribute('rel', 'stylesheet')
+          style.setAttribute('type', 'text/css')
+          style.setAttribute(
+            'href',
+            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/atom-one-dark.min.css'
+          )
+          document.head.appendChild(style)
+
+          const script = document.createElement('script')
+          script.id = 'mark-highlight-script'
+          script.setAttribute(
+            'src',
+            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js'
+          )
+          document.head.appendChild(script)
+        }
+      },
     })
   },
 
