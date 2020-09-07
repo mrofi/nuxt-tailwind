@@ -1,15 +1,14 @@
 import fs from 'fs'
 
 // Create name for your app
-const appName = process.env.APP_NAME || 'Nuxt Tailwind'
+const appName = 'Nuxt Tailwind'
 
 // Create description for your app
 const appDescription =
-  process.env.APP_DESCRIPTION ||
   'A Simple Dashboard Admin powered by Nuxt.JS and Tailwind CSS'
 
 // Your default router base, usually use '',
-const routerBase = process.env.ROUTER_BASE || ''
+const routerBase = ''
 
 export default {
   /*
@@ -27,14 +26,14 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: appName,
+    title: process.env.APP_NAME || appName,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: appDescription,
+        content: process.env.APP_DESCRIPTION || appDescription,
       },
     ],
     link: [
@@ -77,7 +76,7 @@ export default {
   build: {},
 
   router: {
-    base: routerBase,
+    base: process.env.ROUTER_BASE || routerBase,
   },
 
   generate: {
