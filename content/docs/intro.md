@@ -33,6 +33,11 @@ To be noted, currently this package only supports `spa` mode and `static` target
 mode: 'spa',
 target: 'static',
 ```
+If you use `universal` mode instead of `spa`, it will raise error in some components.
+See workaround in each component documentation page to follow.
+
+
+
 
 
 
