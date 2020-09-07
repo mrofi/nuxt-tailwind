@@ -16,7 +16,9 @@ const MarkHighlight = {
           style.setAttribute('type', 'text/css')
           style.setAttribute(
             'href',
-            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/atom-one-dark.min.css'
+            `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/${
+              process.env.HLJS_THEME || 'atom-one-dark'
+            }.min.css`
           )
           document.head.appendChild(style)
 
