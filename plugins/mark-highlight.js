@@ -36,12 +36,7 @@ const MarkHighlight = {
     let filename = false
     let token = false
     block.classList.forEach((cl) => {
-      if (
-        !filename &&
-        cl.indexOf('[') !== false &&
-        cl.indexOf(']') !== false &&
-        cl.indexOf('[') < cl.indexOf(']')
-      ) {
+      if (!filename && cl.includes('[') && cl.indexOf(']') > 1) {
         filename = cl.split('[')[1].split(']')[0].trim()
         token = cl
       }
