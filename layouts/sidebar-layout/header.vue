@@ -11,7 +11,24 @@
 
     <div class="flex items-center">
       <search />
+
       <notification />
+
+      <a
+        href="https://github.com/mrofi/nuxt-tailwind"
+        class="h-8 w-8 flex mx-3 text-gray-600 focus:outline-none bg-black rounded-full"
+        title="Github Repository"
+        target="_blank"
+      >
+        <img
+          class="w-full h-full object-cover"
+          :src="`${$config.routerBase.replace(
+            '\/$',
+            ''
+          )}/Github-Mark-Light-64px.png`"
+          alt="Your avatar"
+        />
+      </a>
 
       <profile
         :user-name="profileData.userName"
