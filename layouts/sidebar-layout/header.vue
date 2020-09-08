@@ -25,7 +25,7 @@
           :src="`${$config.routerBase.replace(
             '\/$',
             ''
-          )}/Github-Mark-Light-64px.png`"
+          )}/GitHub-Mark-Light-64px.png`"
           alt="Your avatar"
         />
       </a>
