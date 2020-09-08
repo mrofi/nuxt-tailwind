@@ -48,7 +48,7 @@ export default {
    ** Plugins to load before mounting the App`
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['@/plugins/t-components.js', '@/plugins/mark-highlight.js'],
+  plugins: ['@/plugins/t-components.js', '@/plugins/highlight.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
