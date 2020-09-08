@@ -23,7 +23,7 @@
         <img
           class="w-full h-full object-cover"
           :src="`${$config.routerBase.replace(
-            '\/$',
+            /\/$/,
             ''
           )}/GitHub-Mark-Light-64px.png`"
           alt="Your avatar"
