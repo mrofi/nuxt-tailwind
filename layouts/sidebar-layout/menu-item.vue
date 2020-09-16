@@ -52,6 +52,7 @@ export default {
           icon: null,
           caption: null,
           children: null,
+          exact: false,
         }
       },
     },
@@ -77,9 +78,10 @@ export default {
   methods: {
     active: (vm, current = null) => {
       const item = current || vm.item
-      const path = item.path
-      const currentPath = vm.$route.path
-      return path === '/'
+      const path = item.path ? item.path.replace(/\/$/, '') : null
+      const currentPath = vm.$route.path.replace(/\/$/, '')
+      const exact = item.exact === undefined ? false : item.exact
+      return exact
         ? currentPath === path
         : currentPath.indexOf(path) === 0 &&
             vm.inArray(currentPath.substring(path.length, path.length + 1), [
