@@ -94,7 +94,9 @@ export default {
   },
 
   publicRuntimeConfig: {
+    // please don't edit
     appName: process.env.APP_NAME || appName,
     routerBase: process.env.ROUTER_BASE || routerBase,
+    // end of don't edit
   },
 }
