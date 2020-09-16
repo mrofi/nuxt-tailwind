@@ -78,6 +78,7 @@ const HighlightJs = {
     if (filename) {
       block.classList.remove(token)
       block.dataset.filename = filename
+      block.style.marginTop = '2em'
       block.parentNode.style.position = 'relative'
       block.parentNode.style.paddingTop = '1.5em'
     }
