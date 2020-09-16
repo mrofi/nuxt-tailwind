@@ -29,7 +29,6 @@ This uses some libraries that may be you have already knew, like :
 ## Main Configuration
 To be noted, currently this package only supports `spa` mode and `static` target.
 ``` [nuxt.config.js]
-
 mode: 'spa',
 target: 'static',
 ```
