@@ -15,7 +15,7 @@ export default {
         userName: 'John Wick',
         userRole: 'Manager',
         userImageUrl:
-          'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=296&q=80',
+          'https://avatars3.githubusercontent.com/u/7432391?s=460&u=afb02121fc4cd70433af2462c4d24ddbc5d88903&v=4',
         menus: [
           {
             path: '/profile',
