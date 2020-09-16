@@ -3,6 +3,7 @@ module.exports = [
     path: '/',
     caption: 'Dashboard',
     icon: 'feather/pie-chart',
+    exact: true,
   },
   {
     path: '/ui-elements',
@@ -36,6 +37,15 @@ module.exports = [
       {
         path: '/docs',
         caption: 'Introduction',
+        exact: true,
+      },
+      {
+        path: '/docs/installation',
+        caption: 'Getting Started',
+      },
+      {
+        path: '/docs/configuration',
+        caption: 'Configuration',
       },
     ],
   },
