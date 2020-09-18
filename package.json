@@ -12,7 +12,8 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",
-    "github-deploy": "git subtree split --prefix dist -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages"
+    "github-deploy": "git subtree split --prefix dist -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages",
+    "test": "jest"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -24,7 +25,7 @@
     }
   },
   "dependencies": {
-    "nuxt": "^2.14.4",
+    "nuxt": "^2.14.5",
     "remarkable": "^2.0.1",
     "remarkable-meta": "^1.0.1"
   },
@@ -36,18 +37,22 @@
     "@nuxtjs/tailwindcss": "^2.1.1",
     "@tailwindcss/custom-forms": "^0.2.1",
     "@tailwindcss/typography": "^0.2.0",
+    "@vue/test-utils": "^1.1.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.8.1",
+    "babel-jest": "^26.3.0",
+    "eslint": "^7.9.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "html-loader": "^1.3.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.13",
-    "prettier": "^2.1.1",
-    "stylelint": "^13.7.0",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "stylelint": "^13.7.1",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0",
-    "vue-tailwind": "^1.2.1"
+    "vue-jest": "^3.0.7",
+    "vue-tailwind": "^1.2.6"
   }
 }
