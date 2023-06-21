@@ -25,7 +25,7 @@
     }
   },
   "dependencies": {
-    "nuxt": "^2.14.5",
+    "nuxt": "^3.4.3",
     "remarkable": "^2.0.1",
     "remarkable-meta": "^1.0.1"
   },
