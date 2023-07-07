@@ -49,7 +49,7 @@
     "jest": "^26.4.2",
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
-    "stylelint": "^13.7.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0",
     "vue-jest": "^3.0.7",
